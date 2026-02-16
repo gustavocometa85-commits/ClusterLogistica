@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Orden de Servicio</title>
+    <style>
+        /* Reducimos márgenes de la hoja a 1cm para aprovechar el espacio */
+        @page {
+            size: letter portrait;
+            margin: 1cm;
+        }
+        body {
+            font-family: Helvetica, sans-serif;
+            color: #333;
+            font-size: 14px; /* Letra un poco más compacta */
+            line-height: 1.4;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 22px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        /* Cajas de información más pegadas entre sí */
+        .info-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { vertical-align: top; padding: 5px; }
+
+        .label { font-weight: bold; color: #555; font-size: 12px; display: block; }
+        .value { font-size: 14px; color: #000; font-weight: 500; }
+
+        /* Sección de firmas al final, pero sin empujar a otra hoja */
+        .signatures {
+            margin-top: 40px;
+            width: 100%;
+            text-align: center;
+        }
+        .sign-box {
+            width: 80%;
+            margin: 0 auto;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>GRUPO CLÚSTER LOGÍSTICA</h1>
+        <div class="subtitle">Orden de Servicio Oficial #{{ viaje.id }}</div>
+    </div>
+
+    <div class="info-box">
+        <h3>📍 Detalles de la Ruta</h3>
+        <table>
+            <tr>
+                <td width="50%">
+                    <span class="label">ORIGEN:</span>
+                    <div class="value">{{ viaje.origen|upper }}</div>
+                </td>
+                <td width="50%">
+                    <span class="label">DESTINO:</span>
+                    <div class="value">{{ viaje.destino|upper }}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label">FECHA DE SALIDA:</span>
+                    <div class="value">{{ viaje.fecha_salida }}</div>
+                </td>
+                <td>
+                    <span class="label">CLIENTE:</span>
+                    <div class="value">{{ viaje.cliente|default:"PENDIENTE"|upper }}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box">
+        <h3>🚛 Unidad y Operador</h3>
+        <table>
+            <tr>
+                <td width="50%">
+                    <span class="label">VEHÍCULO / PLACA:</span>
+                    <div class="value">{{ viaje.vehiculo.placa|default:"SIN ASIGNAR"|upper }}</div>
+                </td>
+                <td width="50%">
+                    <span class="label">OPERADOR RESPONSABLE:</span>
+                    <div class="value">{{ viaje.chofer.nombre|default:"SIN ASIGNAR"|upper }}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box">
+        <h3>💰 Resumen Financiero</h3>
+        <table>
+            <tr>
+                <td>
+                    <span class="label">INGRESOS ESTIMADOS:</span>
+                    <div class="value">${{ viaje.ingresos_estimados }}</div>
+                </td>
+                <td>
+                    <span class="label">ESTADO ACTUAL:</span>
+                    <div class="value">{{ viaje.estado|upper }}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="signatures">
+        <tr>
+            <td width="50%">
+                <div style="height: 40px;"></div> <div class="sign-box">Firma del Operador</div>
+            </td>
+            <td width="50%">
+                <div style="height: 40px;"></div> <div class="sign-box">Autorización Logística</div>
+            </td>
+        </tr>
+    </table>
+
+    <div style="text-align: center; font-size: 10px; color: #999; margin-top: 20px;">
+        Generado automáticamente por Clúster Logística v1.0
+    </div>
+</body>
+</html>

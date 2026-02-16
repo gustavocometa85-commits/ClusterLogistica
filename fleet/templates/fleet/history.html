@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-secondary"><i class="fas fa-history me-2"></i>Historial Completo de Viajes</h2>
+        <span class="badge bg-primary fs-6">{{ trips|length }} Viajes Registrados</span>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th class="py-3 px-4">Fecha</th>
+                            <th class="py-3">Ruta</th>
+                            <th class="py-3">Chofer</th>
+                            <th class="py-3">Vehículo</th>
+                            <th class="py-3 text-center">Estado</th>
+                            <th class="py-3 text-end">Cobrado</th>
+                            <th class="py-3 text-end px-4">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for trip in trips %}
+                        <tr>
+                            <td class="px-4 py-3">{{ trip.scheduled_date|date:"d M Y" }}</td>
+                            <td class="py-3 fw-bold text-dark">{{ trip.route }}</td>
+                            <td class="py-3">
+                                {% if trip.driver %}
+                                    {{ trip.driver }}
+                                {% else %}
+                                    <span class="text-danger"><i class="fas fa-exclamation-circle"></i> Sin Asignar</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 small text-muted">{{ trip.vehicle }}</td>
+                            <td class="py-3 text-center">
+                                {% if trip.status == 'COMPLETED' %}
+                                    <span class="badge bg-success rounded-pill">Completado</span>
+                                {% elif trip.status == 'IN_PROGRESS' %}
+                                    <span class="badge bg-info text-dark rounded-pill">En Ruta</span>
+                                {% elif trip.status == 'CANCELLED' %}
+                                    <span class="badge bg-danger rounded-pill">Cancelado</span>
+                                {% else %}
+                                    <span class="badge bg-warning text-dark rounded-pill">Programado</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 text-end fw-bold text-success">
+                                ${{ trip.price|default:"0.00" }}
+                            </td>
+                            <td class="py-3 text-end px-4">
+                                <a href="/admin/fleet/trip/{{ trip.id }}/change/" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-edit"></i> Ver
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center py-5 text-muted">
+                                <h4>📭 No hay viajes en el historial</h4>
+                                <p>Tus viajes completados aparecerán aquí.</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="background: white; max-width: 600px; margin: 40px auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <h2 style="margin-top:0;">📥 Cargar Manifiesto</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="archivo_excel" accept=".xlsx" required style="width:100%; padding:20px; border:2px dashed #ccc; margin-bottom:20px;">
+        <button type="submit" style="background:#27ae60; color:white; border:none; padding:15px; width:100%; border-radius:8px; font-weight:bold; cursor:pointer;">Procesar Viajes</button>
+    </form>
+    <div style="margin-top:20px; font-size:12px; background:#fff3cd; padding:10px; border-radius:5px;">
+        <strong>Columnas requeridas:</strong> RUTA | FECHA | HORA | CLIENTE
+    </div>
+</div>
+{% endblock %}
