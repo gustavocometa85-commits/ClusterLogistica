@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { KpiSection, RecentTripsTable, getKpis, getActiveTrips, getRecentTrips } from "@/features/dashboard";
+import { KpiSection, RecentTripsTable, DashboardCharts, getKpis, getActiveTrips, getRecentTrips, getChartData } from "@/features/dashboard";
 
 export default async function DashboardPage() {
-  const [kpis, activeTrips, recentTrips] = await Promise.all([
+  const [kpis, activeTrips, recentTrips, chartData] = await Promise.all([
     getKpis(),
     getActiveTrips(),
     getRecentTrips(),
+    getChartData(),
   ]);
 
   return (
@@ -29,6 +30,8 @@ export default async function DashboardPage() {
       </div>
 
       <KpiSection kpis={kpis} />
+
+      <DashboardCharts data={chartData} />
 
       {activeTrips.length > 0 && (
         <RecentTripsTable
