@@ -38,17 +38,24 @@ export default async function TripDetailPage({
 
   const totalGastos = gastos.reduce((s, g) => s + Number(g.monto), 0);
   const totalDiesel = cargas.reduce((s, c) => s + Number(c.costo_total), 0);
+  const utilidadViaje = Number(trip.ingresos_estimados) - totalGastos - totalDiesel;
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <Link href="/historial" className="text-gray-500 hover:text-gray-700">
           ← Volver
         </Link>
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-xl sm:text-2xl font-bold">
           {trip.origen} → {trip.destino}
         </h1>
         <StatusBadge estado={trip.estado} />
+        <a
+          href={`/api/viajes/${id}/pdf`}
+          className="ml-auto px-4 py-2 bg-[#2c3e50] text-white rounded-lg text-sm hover:bg-[#34495e] transition-colors"
+        >
+          Descargar PDF
+        </a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -63,9 +70,26 @@ export default async function TripDetailPage({
         <InfoCard label="Fecha Regreso" value={trip.fecha_regreso ? formatDate(trip.fecha_regreso) : "—"} />
       </div>
 
+      {/* Resumen Financiero */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <p className="text-xs text-red-600">Total Gastos + Diesel</p>
+          <p className="text-xl font-bold text-red-700 mt-1">{formatCurrency(totalGastos + totalDiesel)}</p>
+        </div>
+        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+          <p className="text-xs text-emerald-600">Ingreso Estimado</p>
+          <p className="text-xl font-bold text-emerald-700 mt-1">{formatCurrency(trip.ingresos_estimados)}</p>
+        </div>
+        <div className={`rounded-xl p-4 border ${utilidadViaje >= 0 ? "bg-blue-50 border-blue-200" : "bg-red-50 border-red-200"}`}>
+          <p className={`text-xs ${utilidadViaje >= 0 ? "text-blue-600" : "text-red-600"}`}>Utilidad del Viaje</p>
+          <p className={`text-xl font-bold mt-1 ${utilidadViaje >= 0 ? "text-blue-700" : "text-red-700"}`}>{formatCurrency(utilidadViaje)}</p>
+        </div>
+      </div>
+
       {/* Gastos */}
       <Section title="Gastos" count={gastos.length}>
         {gastos.length > 0 ? (
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-gray-50 text-left">
               <tr>
@@ -92,6 +116,7 @@ export default async function TripDetailPage({
               </tr>
             </tfoot>
           </table>
+          </div>
         ) : (
           <p className="p-4 text-gray-500 text-sm">Sin gastos registrados</p>
         )}
@@ -100,6 +125,7 @@ export default async function TripDetailPage({
       {/* Cargas de Combustible */}
       <Section title="Cargas de Combustible" count={cargas.length}>
         {cargas.length > 0 ? (
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-gray-50 text-left">
               <tr>
@@ -126,6 +152,7 @@ export default async function TripDetailPage({
               </tr>
             </tfoot>
           </table>
+          </div>
         ) : (
           <p className="p-4 text-gray-500 text-sm">Sin cargas registradas</p>
         )}

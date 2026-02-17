@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from "@/shared/lib/supabase/server";
 import { StatusBadge } from "@/shared/ui/status-badge";
 import { formatCurrency, formatDate } from "@/shared/lib/format";
+import { ExcelUpload } from "@/features/trips";
 import type { ViajeConRelaciones } from "@/shared/types/database";
 
 export default async function HistorialPage() {
@@ -16,7 +17,7 @@ export default async function HistorialPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <h1 className="text-2xl font-bold">Historial de Viajes</h1>
         <Link
           href="/viajes/nuevo"
@@ -25,6 +26,8 @@ export default async function HistorialPage() {
           + Nuevo Viaje
         </Link>
       </div>
+
+      <ExcelUpload />
 
       <div className="bg-white rounded-xl border overflow-hidden">
         {viajes.length === 0 ? (

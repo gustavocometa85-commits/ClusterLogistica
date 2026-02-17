@@ -31,6 +31,7 @@ export default async function CostosPage() {
             {gastos.length === 0 ? (
               <p className="p-4 text-gray-500 text-sm">Sin gastos</p>
             ) : (
+              <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 text-left">
                   <tr>
@@ -53,6 +54,7 @@ export default async function CostosPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </div>
         </div>
@@ -66,6 +68,7 @@ export default async function CostosPage() {
             {cargas.length === 0 ? (
               <p className="p-4 text-gray-500 text-sm">Sin cargas</p>
             ) : (
+              <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 text-left">
                   <tr>
@@ -90,6 +93,7 @@ export default async function CostosPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </div>
         </div>

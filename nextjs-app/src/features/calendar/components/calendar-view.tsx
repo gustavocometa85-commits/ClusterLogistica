@@ -38,7 +38,7 @@ export function CalendarView({ trips }: { trips: ViajeConRelaciones[] }) {
 
   return (
     <div className="bg-white rounded-xl border p-4">
-      <div className="flex gap-3 mb-4 text-xs">
+      <div className="flex flex-wrap gap-3 mb-4 text-xs">
         <span className="flex items-center gap-1">
           <span className="w-3 h-3 rounded-full bg-[#0d6efd]" /> En Ruta
         </span>
@@ -57,9 +57,9 @@ export function CalendarView({ trips }: { trips: ViajeConRelaciones[] }) {
         initialView="dayGridMonth"
         locale="es"
         headerToolbar={{
-          left: "prev,next today",
+          left: "prev,next",
           center: "title",
-          right: "dayGridMonth,timeGridWeek,listMonth",
+          right: "dayGridMonth,listMonth",
         }}
         events={events}
         eventDidMount={(info) => {

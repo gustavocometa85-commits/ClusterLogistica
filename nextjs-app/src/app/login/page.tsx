@@ -3,7 +3,7 @@ import { LoginForm } from "@/features/auth/components/login-form";
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#2c3e50]">
-      <div className="bg-white rounded-xl shadow-xl p-8 w-full max-w-md">
+      <div className="bg-white rounded-xl shadow-xl p-5 sm:p-8 w-full max-w-md mx-4 sm:mx-0">
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-[#2c3e50]">
             Clúster Logística

@@ -14,7 +14,7 @@ export function VehiculoForm() {
     <form action={formAction} className="bg-white rounded-xl border p-5 space-y-3">
       <h3 className="font-semibold">Agregar Vehículo</h3>
       <FormError state={state} />
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <input name="marca" placeholder="Marca" required className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
         <input name="modelo" placeholder="Modelo" required className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
         <input name="placas" placeholder="Placas" required className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />

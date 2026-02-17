@@ -31,6 +31,7 @@ export default async function FlotaPage() {
             {vehiculos.length === 0 ? (
               <p className="p-4 text-gray-500 text-sm">Sin vehículos</p>
             ) : (
+              <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 text-left">
                   <tr>
@@ -53,6 +54,7 @@ export default async function FlotaPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </div>
         </div>
@@ -67,6 +69,7 @@ export default async function FlotaPage() {
             {choferes.length === 0 ? (
               <p className="p-4 text-gray-500 text-sm">Sin choferes</p>
             ) : (
+              <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 text-left">
                   <tr>
@@ -89,6 +92,7 @@ export default async function FlotaPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </div>
         </div>

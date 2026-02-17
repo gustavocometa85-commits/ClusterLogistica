@@ -3,11 +3,21 @@ import { StatusBadge } from "@/shared/ui/status-badge";
 import { formatCurrency, formatDate } from "@/shared/lib/format";
 import type { ViajeConRelaciones } from "@/shared/types/database";
 
-export function RecentTripsTable({ trips }: { trips: ViajeConRelaciones[] }) {
+interface Props {
+  trips: ViajeConRelaciones[];
+  title?: string;
+  emptyMessage?: string;
+}
+
+export function RecentTripsTable({
+  trips,
+  title = "Viajes Recientes",
+  emptyMessage = "No hay viajes registrados",
+}: Props) {
   if (trips.length === 0) {
     return (
       <div className="bg-white rounded-xl border p-8 text-center text-gray-500">
-        No hay viajes registrados
+        {emptyMessage}
       </div>
     );
   }
@@ -15,7 +25,7 @@ export function RecentTripsTable({ trips }: { trips: ViajeConRelaciones[] }) {
   return (
     <div className="bg-white rounded-xl border overflow-hidden">
       <div className="p-4 border-b flex items-center justify-between">
-        <h2 className="font-semibold text-lg">Viajes Recientes</h2>
+        <h2 className="font-semibold text-lg">{title}</h2>
         <Link
           href="/historial"
           className="text-sm text-blue-600 hover:underline"

@@ -6,15 +6,18 @@ export interface DashboardKpis {
   ingresosTotales: number;
   gastosTotales: number;
   utilidadNeta: number;
+  dineroEnRuta: number;
+  viajesEnRuta: number;
 }
 
 export async function getKpis(): Promise<DashboardKpis> {
   const supabase = await createClient();
 
-  const [viajesRes, gastosRes, cargasRes] = await Promise.all([
-    supabase.from("viajes").select("ingresos_estimados").then(r => r, () => ({ data: null })),
-    supabase.from("gastos").select("monto").then(r => r, () => ({ data: null })),
-    supabase.from("cargas_combustible").select("costo_total").then(r => r, () => ({ data: null })),
+  const [viajesRes, gastosRes, cargasRes, enRutaRes] = await Promise.all([
+    supabase.from("viajes").select("ingresos_estimados"),
+    supabase.from("gastos").select("monto"),
+    supabase.from("cargas_combustible").select("costo_total"),
+    supabase.from("viajes").select("ingresos_estimados").eq("estado", "EN_RUTA"),
   ]);
 
   const ingresosTotales =
@@ -25,9 +28,15 @@ export async function getKpis(): Promise<DashboardKpis> {
     cargasRes.data?.reduce((sum: number, c: Record<string, unknown>) => sum + Number(c.costo_total), 0) ?? 0;
   const gastosTotales = gastosOtros + gastosDiesel;
 
+  const dineroEnRuta =
+    enRutaRes.data?.reduce((sum, v: Record<string, unknown>) => sum + Number(v.ingresos_estimados), 0) ?? 0;
+  const viajesEnRuta = enRutaRes.data?.length ?? 0;
+
   return {
     ingresosTotales,
     gastosTotales,
     utilidadNeta: ingresosTotales - gastosTotales,
+    dineroEnRuta,
+    viajesEnRuta,
   };
 }

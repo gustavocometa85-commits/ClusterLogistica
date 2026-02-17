@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { KpiSection, RecentTripsTable, getKpis, getRecentTrips } from "@/features/dashboard";
+import { KpiSection, RecentTripsTable, getKpis, getActiveTrips, getRecentTrips } from "@/features/dashboard";
 
 export default async function DashboardPage() {
-  const [kpis, recentTrips] = await Promise.all([getKpis(), getRecentTrips()]);
+  const [kpis, activeTrips, recentTrips] = await Promise.all([
+    getKpis(),
+    getActiveTrips(),
+    getRecentTrips(),
+  ]);
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <h1 className="text-2xl font-bold">Dashboard</h1>
         <div className="flex gap-2">
           <Link
@@ -25,7 +29,20 @@ export default async function DashboardPage() {
       </div>
 
       <KpiSection kpis={kpis} />
-      <RecentTripsTable trips={recentTrips} />
+
+      {activeTrips.length > 0 && (
+        <RecentTripsTable
+          trips={activeTrips}
+          title="En Carretera Ahora"
+          emptyMessage="No hay viajes en ruta"
+        />
+      )}
+
+      <RecentTripsTable
+        trips={recentTrips}
+        title="Viajes Recientes"
+        emptyMessage="No hay viajes registrados"
+      />
     </div>
   );
 }
