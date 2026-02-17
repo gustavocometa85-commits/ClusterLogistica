@@ -1,1 +1,114 @@
 @import "tailwindcss";
+
+/*
+ * ANTIGRAVITY THEME
+ * Large typography · Generous whitespace · Minimalist design
+ */
+
+@theme {
+  /* ── Typography Scale (base 18px) ── */
+  --font-size-xs: 0.8rem;      /* 14.4px */
+  --font-size-sm: 0.889rem;    /* 16px */
+  --font-size-base: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 1.875rem;   /* 30px */
+  --font-size-3xl: 2.25rem;    /* 36px */
+  --font-size-4xl: 3rem;       /* 48px */
+
+  /* ── Line Heights (relaxed for readability) ── */
+  --line-height-xs: 1.25rem;
+  --line-height-sm: 1.5rem;
+  --line-height-base: 1.75rem;
+  --line-height-lg: 1.875rem;
+  --line-height-xl: 2.125rem;
+  --line-height-2xl: 2.5rem;
+  --line-height-3xl: 2.75rem;
+  --line-height-4xl: 3.25rem;
+
+  /* ── Brand Colors ── */
+  --color-brand-900: #1a2332;
+  --color-brand-800: #2c3e50;
+  --color-brand-700: #34495e;
+  --color-brand-600: #4a6785;
+  --color-brand-500: #5d7d9a;
+  --color-brand-100: #e8eef4;
+  --color-brand-50: #f4f7fa;
+
+  --color-accent-500: #f1c40f;
+  --color-accent-400: #f4d03f;
+  --color-accent-600: #d4ac0d;
+
+  /* ── Neutral Palette (warm grays) ── */
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f8f9fb;
+  --color-surface-muted: #f1f3f5;
+  --color-border: #e5e7eb;
+  --color-border-subtle: #f0f0f0;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+
+  /* ── Spacing Scale (generous) ── */
+  --spacing-page: 2.5rem;
+  --spacing-section: 2rem;
+  --spacing-card: 1.75rem;
+
+  /* ── Border Radius ── */
+  --radius-card: 1rem;
+  --radius-button: 0.625rem;
+  --radius-input: 0.5rem;
+  --radius-badge: 0.375rem;
+
+  /* ── Shadows (subtle, layered) ── */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+
+  /* ── Font Family ── */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* ── Base Reset for Antigravity ── */
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  letter-spacing: -0.011em;
+  line-height: 1.6;
+}
+
+/* ── Clean Focus States ── */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Smooth Scrolling ── */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ── Scrollbar Styling (minimal) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}

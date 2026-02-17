@@ -15,30 +15,30 @@ export default async function IncidenciasPage() {
   const incidencias = (incidenciasRes.data ?? []) as Incidencia[];
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Incidencias</h1>
+    <div className="space-y-8">
+      <h1 className="text-2xl font-semibold tracking-tight">Incidencias</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div>
           <IncidenciaForm viajes={viajes} />
         </div>
 
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-xl border overflow-hidden">
-            <div className="p-4 border-b">
+          <div className="bg-surface rounded-card border border-border shadow-card overflow-hidden">
+            <div className="px-card py-5 border-b border-border-subtle">
               <h2 className="font-semibold">
                 Registro ({incidencias.length})
               </h2>
             </div>
             {incidencias.length === 0 ? (
-              <p className="p-4 text-gray-500 text-sm">Sin incidencias</p>
+              <p className="p-6 text-text-muted text-sm">Sin incidencias</p>
             ) : (
-              <div className="divide-y">
+              <div className="divide-y divide-border-subtle">
                 {incidencias.map((inc) => (
-                  <div key={inc.id} className="p-4 flex items-start justify-between gap-3">
+                  <div key={inc.id} className="p-5 flex items-start justify-between gap-4">
                     <div className="flex items-start gap-3">
                       <span
-                        className={`mt-1 w-2.5 h-2.5 rounded-full shrink-0 ${
+                        className={`mt-1.5 w-2.5 h-2.5 rounded-full shrink-0 ${
                           inc.resuelto ? "bg-emerald-500" : "bg-red-500"
                         }`}
                       />
@@ -46,10 +46,10 @@ export default async function IncidenciasPage() {
                         <p className="font-medium text-sm">
                           {inc.tipo.replace("_", " ")}
                         </p>
-                        <p className="text-gray-600 text-sm mt-0.5">
+                        <p className="text-text-secondary text-sm mt-1">
                           {inc.descripcion}
                         </p>
-                        <p className="text-xs text-gray-400 mt-1">
+                        <p className="text-xs text-text-muted mt-1.5">
                           {new Date(inc.fecha_reporte).toLocaleString("es-MX")}
                         </p>
                       </div>

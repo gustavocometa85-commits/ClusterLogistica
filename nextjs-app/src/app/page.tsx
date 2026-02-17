@@ -9,19 +9,19 @@ export default async function DashboardPage() {
   ]);
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
-        <div className="flex gap-2">
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
+        <div className="flex gap-3">
           <Link
             href="/viajes/nuevo"
-            className="px-4 py-2 bg-[#2c3e50] text-white rounded-lg text-sm hover:bg-[#34495e] transition-colors"
+            className="px-5 py-2.5 bg-brand-800 text-white rounded-button text-sm font-medium hover:bg-brand-700 transition-colors"
           >
             + Nuevo Viaje
           </Link>
           <Link
             href="/calendario"
-            className="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 transition-colors"
+            className="px-5 py-2.5 border border-border rounded-button text-sm font-medium text-text-secondary hover:bg-surface-muted transition-colors"
           >
             Ver Calendario
           </Link>

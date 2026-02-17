@@ -13,7 +13,7 @@ export function DeleteButton({ id, table }: { id: string; table: string }) {
         if (!confirm("¿Eliminar este registro?")) return;
         startTransition(async () => { await deleteRecord(id, table); });
       }}
-      className="text-red-500 hover:text-red-700 text-xs disabled:opacity-50"
+      className="text-red-400 hover:text-red-600 text-xs font-medium transition-colors disabled:opacity-50"
     >
       {pending ? "..." : "Eliminar"}
     </button>

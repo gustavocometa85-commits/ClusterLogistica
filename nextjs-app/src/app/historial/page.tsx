@@ -16,12 +16,12 @@ export default async function HistorialPage() {
   const viajes = (data ?? []) as ViajeConRelaciones[];
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Historial de Viajes</h1>
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h1 className="text-2xl font-semibold tracking-tight">Historial de Viajes</h1>
         <Link
           href="/viajes/nuevo"
-          className="px-4 py-2 bg-[#2c3e50] text-white rounded-lg text-sm hover:bg-[#34495e] transition-colors"
+          className="px-5 py-2.5 bg-brand-800 text-white rounded-button text-sm font-medium hover:bg-brand-700 transition-colors"
         >
           + Nuevo Viaje
         </Link>
@@ -29,52 +29,52 @@ export default async function HistorialPage() {
 
       <ExcelUpload />
 
-      <div className="bg-white rounded-xl border overflow-hidden">
+      <div className="bg-surface rounded-card border border-border shadow-card overflow-hidden">
         {viajes.length === 0 ? (
-          <p className="p-8 text-center text-gray-500">No hay viajes registrados</p>
+          <p className="p-10 text-center text-text-muted">No hay viajes registrados</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-gray-50 text-gray-600 text-left">
+              <thead className="bg-surface-muted text-text-secondary text-left">
                 <tr>
-                  <th className="px-4 py-3">Fecha</th>
-                  <th className="px-4 py-3">Ruta</th>
-                  <th className="px-4 py-3">Cliente</th>
-                  <th className="px-4 py-3">Chofer</th>
-                  <th className="px-4 py-3">Vehículo</th>
-                  <th className="px-4 py-3">Estado</th>
-                  <th className="px-4 py-3 text-right">Ingreso</th>
-                  <th className="px-4 py-3"></th>
+                  <th className="px-5 py-3.5 font-medium">Fecha</th>
+                  <th className="px-5 py-3.5 font-medium">Ruta</th>
+                  <th className="px-5 py-3.5 font-medium">Cliente</th>
+                  <th className="px-5 py-3.5 font-medium">Chofer</th>
+                  <th className="px-5 py-3.5 font-medium">Vehículo</th>
+                  <th className="px-5 py-3.5 font-medium">Estado</th>
+                  <th className="px-5 py-3.5 font-medium text-right">Ingreso</th>
+                  <th className="px-5 py-3.5"></th>
                 </tr>
               </thead>
-              <tbody className="divide-y">
+              <tbody className="divide-y divide-border-subtle">
                 {viajes.map((v) => (
-                  <tr key={v.id} className="hover:bg-gray-50">
-                    <td className="px-4 py-3">{formatDate(v.fecha_salida)}</td>
-                    <td className="px-4 py-3 font-medium">
+                  <tr key={v.id} className="hover:bg-surface-subtle transition-colors">
+                    <td className="px-5 py-4">{formatDate(v.fecha_salida)}</td>
+                    <td className="px-5 py-4 font-medium">
                       {v.origen} → {v.destino}
                     </td>
-                    <td className="px-4 py-3">{v.cliente}</td>
-                    <td className="px-4 py-3">
+                    <td className="px-5 py-4">{v.cliente}</td>
+                    <td className="px-5 py-4">
                       {v.choferes?.nombre ?? (
                         <span className="text-red-500 text-xs">Sin asignar</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-gray-500 text-xs">
+                    <td className="px-5 py-4 text-text-muted text-xs">
                       {v.vehiculos
                         ? `${v.vehiculos.economico} - ${v.vehiculos.marca}`
                         : "—"}
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-5 py-4">
                       <StatusBadge estado={v.estado} />
                     </td>
-                    <td className="px-4 py-3 text-right font-semibold text-emerald-700">
+                    <td className="px-5 py-4 text-right font-semibold text-emerald-700">
                       {formatCurrency(v.ingresos_estimados)}
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-5 py-4">
                       <Link
                         href={`/viajes/${v.id}`}
-                        className="text-blue-600 hover:underline text-xs"
+                        className="text-brand-600 hover:text-brand-800 text-xs font-medium"
                       >
                         Ver
                       </Link>

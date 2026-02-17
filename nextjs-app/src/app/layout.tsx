@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { AppShell } from "@/shared/ui/app-shell";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Clúster Logística",
@@ -13,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <body className="bg-gray-50 text-gray-900">
+    <html lang="es" className={inter.variable}>
+      <body className="bg-surface-subtle text-text-primary antialiased">
         <AppShell>{children}</AppShell>
       </body>
     </html>
