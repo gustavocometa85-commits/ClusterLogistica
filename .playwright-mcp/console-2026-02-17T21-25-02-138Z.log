@@ -1,0 +1,53 @@
+[   18401ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   18610ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   22002ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   22581ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:138
+[   22612ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   22953ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   26061ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:138
+[   26071ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   26273ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   29321ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/historial:0
+[   29642ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   29827ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   32837ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   33179ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   36246ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/costos:0
+[   37033ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:138
+[   37055ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   37330ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   40366ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/incidencias:0
+[   48940ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ chrome-error://chromewebdata/:0
+[   58128ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   58354ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[   61383ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/login:0
+[  219057ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[  219263ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2:0
+[  225597ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/calendario:0
+[  229403ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/historial:0
+[  233760ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/flota:0
+[  248294ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  251539ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  325420ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/viajes/03c954ed-e7e8-4cb9-b278-c90da925fed5:0
+[  354512ms] [WARNING] The resource http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0

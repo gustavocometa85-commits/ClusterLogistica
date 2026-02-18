@@ -1,0 +1,67 @@
+[    1786ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[    2493ms] Error: Cannot find module './10.js'
+Require stack:
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/webpack-runtime.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/app/calendario/page.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/require.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/load-components.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/build/utils.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/build/swc/options.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/build/swc/index.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/config.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/next.js
+- /Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1448:15)
+    at <unknown> (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/require-hook.js:55:36)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1234:25)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1548:12)
+    at mod.require (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at __webpack_require__.f.require (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/webpack-runtime.js:198:28)
+    at <unknown> (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/webpack-runtime.js:162:22)
+    at <unknown> (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/app/page.js:2:15229)
+    at Object.<anonymous> (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/.next/server/app/page.js:2:15278)
+    at Module._compile (node:internal/modules/cjs/loader:1804:14)
+    at Object..js (node:internal/modules/cjs/loader:1936:10)
+    at Module.load (node:internal/modules/cjs/loader:1525:32)
+    at Module._load (node:internal/modules/cjs/loader:1327:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1548:12)
+    at mod.require (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at requirePage (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/require.js:103:84)
+    at loadComponentsImpl (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/load-components.js:107:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/next-server.js:745:36)
+    at async DevServer.findPageComponents (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/dev/next-dev-server.js:610:20)
+    at async DevServer.renderPageComponent (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/base-server.js:2246:24)
+    at async DevServer.renderToResponseImpl (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/base-server.js:2297:32)
+    at async DevServer.pipeImpl (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/base-server.js:959:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/base-server.js:853:17)
+    at async (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/dev/next-dev-server.js:371:20)
+    at async Span.traceAsyncFn (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/dev/next-dev-server.js:368:24)
+    at async invokeRender (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/lib/router-server.js:230:21)
+    at async handleRequest (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/lib/router-server.js:408:24)
+    at async requestHandlerImpl (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/lib/router-server.js:432:13)
+    at async Server.requestListener (file:///Users/macbook/Downloads/SUITE_CLUSTER/CLústerLogistica/nextjs-app/node_modules/next/dist/server/lib/start-server.js:146:13)
+[   12243ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed:  @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:84
+[   13249ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:84
+[   14251ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:84
+[   15254ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:84
+[   16256ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:84
+[   17258ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:84
+[   24448ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/67ac84d4102eb871.webpack.hot-update.json:0
+[   24448ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:352
+[   26197ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/67ac84d4102eb871.webpack.hot-update.json:0
+[   26197ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:352
